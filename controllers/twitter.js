@@ -6,7 +6,7 @@ const router = express.Router()
 
 const bearer = process.env.TWITTER_OAUTH_BEARER
 
-const twitterUrl = 'https://api.twitter.com/2/users/15182079/tweets'
+const twitterUrl = 'https://api.twitter.com/2/users/15182079/tweets?tweet.fields=id,text,created_at'
 const twitterHeaders = {
     'Authorization': `Bearer ${bearer}`
 }
