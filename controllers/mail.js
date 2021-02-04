@@ -6,25 +6,27 @@ const sendgrid = require('nodemailer-sendgrid-transport')
 
 const router = express.Router()
 
-const key = process.env.SENDGRID_API_KEY
+const username = process.env.GMAIL_USERNAME
+const password = process.env.GMAIL_PASSWORD
 
-const transporter = nodemailer.createTransport(sendgrid({
-    auth: {api_key: key}
-}))
-
-router.post('/', async (req, res) => {
-    const { name, email, subject, message } = req.body
-    try {
-        const newMail = await transporter.sendMail({
-            to: 'jr@jacksonreeves.com',
-            from: email,
-            subject: subject,
-            html: `<h3>${name}</h3><p>${message}</p>`
-        })
-        res.status(200).json({email: newMail})
-    } catch (error) {
-        res.status(400).json({msg: error})
+const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+        user: username,
+        pass: password
     }
+})
+
+router.post('/', (req, res) => {
+    const { name, email, subject, message } = req.body
+    transporter.sendMail({
+        to: 'jr@jacksonreeves.com',
+        from: email,
+        subject: subject,
+        html: `<h3>${name}</h3><p>${message}</p>`
+    })
 })
 
 module.exports = router
