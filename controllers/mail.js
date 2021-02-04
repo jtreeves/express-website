@@ -6,11 +6,11 @@ const sendgrid = require('nodemailer-sendgrid-transport')
 
 const router = express.Router()
 
+const key = process.env.SENDGRID_API_KEY
+
 const transporter = nodemailer.createTransport(sendgrid({
     auth: {api_key: key}
 }))
-
-const key = process.env.SENDGRID_API_KEY
 
 router.post('/', async (req, res) => {
     const { name, email, subject, message } = req.body
