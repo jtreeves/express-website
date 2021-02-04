@@ -9,7 +9,7 @@ const githubUrl = 'https://api.github.com/users/jtreeves/events'
 router.get('/', async (req, res) => {
     try {
         const result = await axios.get(githubUrl)
-        res.status(200).json({tweets: result.data})
+        res.status(200).json({commits: result.data})
     } catch (error) {
         res.status(400).json({msg: error})
     }
