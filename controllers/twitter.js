@@ -38,7 +38,12 @@ router.get('/', async (req, res) => {
         console.log(`RESULT KEYS: ${Object.keys(result)}`)
         console.log(`RESULT.DATA: ${result.data}`)
         console.log(`RESULT.DATA KEYS: ${Object.keys(result.data)}`)
-        res.status(200).json({tweets: result.data})
+        console.log(`RESULT.DATA.DATA: ${result.data.data}`)
+        console.log(`RESULT.DATA.DATA KEYS: ${Object.keys(result.data.data)}`)
+        console.log(`RESULT.DATA.DATA[0]: ${result.data.data[0]}`)
+        console.log(`RESULT.DATA.DATA[0] KEYS: ${Object.keys(result.data.data[0])}`)
+        console.log(`RESULT.DATA.DATA[0].TEXT: ${result.data.data[0].TEXT}`)
+        res.status(200).json({tweets: result.data.data})
     } catch (error) {
         res.status(400).json({msg: error})
     }
