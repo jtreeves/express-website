@@ -4,7 +4,7 @@ const app = express()
 const cors = require('cors')
 
 const twitter = require('./controllers/twitter')
-// const tumblr = require('./controllers/tumblr')
+const tumblr = require('./controllers/tumblr')
 const github = require('./controllers/github')
 
 app.use(cors())
@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
 app.use('/twitter', twitter)
-// app.use('/tumblr', tumblr)
+app.use('/tumblr', tumblr)
 app.use('/github', github)
 
 app.get('/', (req, res) => {
