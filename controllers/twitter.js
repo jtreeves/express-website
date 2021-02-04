@@ -42,7 +42,7 @@ router.get('/', async (req, res) => {
         console.log(`RESULT.DATA.DATA KEYS: ${Object.keys(result.data.data)}`)
         console.log(`RESULT.DATA.DATA[0]: ${result.data.data[0]}`)
         console.log(`RESULT.DATA.DATA[0] KEYS: ${Object.keys(result.data.data[0])}`)
-        console.log(`RESULT.DATA.DATA[0].TEXT: ${result.data.data[0].TEXT}`)
+        console.log(`RESULT.DATA.DATA[0].TEXT: ${result.data.data[0].text}`)
         res.status(200).json({tweets: result.data.data})
     } catch (error) {
         res.status(400).json({msg: error})
