@@ -24,6 +24,7 @@
         "ejs": "^3.1.5",
         "express": "^4.17.1",
         "express-ejs-layouts": "^2.5.0",
-        "twitter-v2": "^1.0.2"
+        "twitter-v2": "^1.0.2",
+        "uuid": "^8.3.2"
     }
 }
