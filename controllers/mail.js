@@ -11,8 +11,8 @@ const password = process.env.GMAIL_PASSWORD
 
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: {
         user: username,
         pass: password
@@ -23,9 +23,13 @@ router.post('/', (req, res) => {
     const { name, email, subject, message } = req.body
     transporter.sendMail({
         to: 'jr@jacksonreeves.com',
-        from: email,
-        subject: subject,
-        html: `<h3>${name}</h3><p>${message}</p>`
+        subject: 'EMAIL FROM CONTACT FORM',
+        html: `
+            <p><strong>Name:</strong> Forced Name</p> 
+            <p><strong>Email:</strong> <a href="mailtEmailced@email.com">forced@email.com</a></p>
+            <p><strong>Subject:</strong> Forced Subject</p> 
+            <p><strong>Message:</strong> Forced message.</p>
+        `
     })
 })
 
