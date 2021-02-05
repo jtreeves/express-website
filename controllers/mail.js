@@ -1,8 +1,6 @@
 require('dotenv').config()
 const express = require('express')
-const axios = require('axios')
 const nodemailer = require('nodemailer')
-const sendgrid = require('nodemailer-sendgrid-transport')
 
 const router = express.Router()
 

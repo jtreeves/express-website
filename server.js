@@ -2,7 +2,6 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const bodyParser = require('body-parser')
 const morgan = require('morgan')
 
 const twitter = require('./controllers/twitter')
