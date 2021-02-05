@@ -25,10 +25,10 @@ router.post('/', (req, res) => {
         to: 'jr@jacksonreeves.com',
         subject: 'EMAIL FROM CONTACT FORM',
         html: `
-            <p><strong>Name:</strong> Forced Name</p> 
-            <p><strong>Email:</strong> <a href="mailtEmailced@email.com">forced@email.com</a></p>
-            <p><strong>Subject:</strong> Forced Subject</p> 
-            <p><strong>Message:</strong> Forced message.</p>
+            <p><strong>Name:</strong> ${name}</p> 
+            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+            <p><strong>Subject:</strong> ${subject}</p> 
+            <p><strong>Message:</strong> ${message}</p>
         `
     })
 })
