@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
     const { name, email, subject, message } = req.body
     transporter.sendMail({
         to: 'jr@jacksonreeves.com',
-        subject: 'EMAIL FROM CONTACT FORM',
+        subject: subject,
         html: `
             <p><strong>Name:</strong> ${name}</p> 
             <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
