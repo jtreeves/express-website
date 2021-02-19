@@ -5,8 +5,9 @@ const cors = require('cors')
 const morgan = require('morgan')
 
 const twitter = require('./controllers/twitter')
-const tumblr = require('./controllers/tumblr')
 const github = require('./controllers/github')
+const tumblr = require('./controllers/tumblr')
+const dev = require('./controllers/dev')
 const mail = require('./controllers/mail')
 
 app.use(cors())
@@ -15,8 +16,9 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 app.use('/twitter', twitter)
-app.use('/tumblr', tumblr)
 app.use('/github', github)
+app.use('/tumblr', tumblr)
+app.use('/dev', dev)
 app.use('/mail', mail)
 
 app.get('/', (req, res) => {
