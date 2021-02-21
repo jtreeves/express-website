@@ -8,6 +8,8 @@ const twitter = require('./controllers/twitter')
 const github = require('./controllers/github')
 const tumblr = require('./controllers/tumblr')
 const dev = require('./controllers/dev')
+const medium = require('./controllers/medium')
+const youtube = require('./controllers/youtube')
 const mail = require('./controllers/mail')
 
 app.use(cors())
@@ -19,6 +21,8 @@ app.use('/twitter', twitter)
 app.use('/github', github)
 app.use('/tumblr', tumblr)
 app.use('/dev', dev)
+app.use('/medium', medium)
+app.use('/youtube', youtube)
 app.use('/mail', mail)
 
 app.get('/', (req, res) => {
