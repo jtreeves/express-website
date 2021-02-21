@@ -2,7 +2,13 @@ require('dotenv').config()
 const express = require('express')
 const axios = require('axios')
 const Parser = require('rss-parser')
-const parser = new Parser()
+let parser = new Parser({
+    customFields: {
+        item: [
+            ['content:encoded', 'content'],
+        ]
+    }
+})
 
 const router = express.Router()
 
