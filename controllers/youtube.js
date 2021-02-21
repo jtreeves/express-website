@@ -11,7 +11,7 @@ const youtubeUrl = 'https://www.googleapis.com/youtube/v3/search?type=video&chan
 router.get('/', async (req, res) => {
     try {
         const result = await axios.get(youtubeUrl)
-        res.status(200).json({tweets: result.data})
+        res.status(200).json({videos: result.data})
     } catch (error) {
         res.status(400).json({msg: error})
     }
