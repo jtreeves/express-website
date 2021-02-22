@@ -6,12 +6,11 @@ const router = express.Router()
 
 const key = process.env.TUMBLR_API_KEY
 
-const tumblrUrl = 'https://api.tumblr.com/v2/blog/programming10101.tumblr.com/posts/text?tag='
+const tumblrUrl = 'https://api.tumblr.com/v2/blog/jacksonreeves.tumblr.com/posts/link?tag=resources&api_key=' + key
 
-router.get('/:tag', async (req, res) => {
-    const tag = req.params.tag
+router.get('/', async (req, res) => {
     try {
-        const result = await axios.get(tumblrUrl + tag + '&api_key=' + key)
+        const result = await axios.get(tumblrUrl)
         res.status(200).json({posts: result.data.response.posts})
     } catch (error) {
         res.status(400).json({msg: error})
