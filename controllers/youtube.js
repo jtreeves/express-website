@@ -6,7 +6,7 @@ const router = express.Router()
 
 const key = process.env.YOUTUBE_API_KEY
 
-const youtubeUrl = 'https://www.googleapis.com/youtube/v3/search?type=video&channelId=UCVaB8BfT4s6G5NRVx4nobtg&key=' + key
+const youtubeUrl = 'https://www.googleapis.com/youtube/v3/search?type=video&order=date&channelId=UCVaB8BfT4s6G5NRVx4nobtg&key=' + key
 
 router.get('/', async (req, res) => {
     try {
